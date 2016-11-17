@@ -1,0 +1,20 @@
+<table class="table table-striped">
+	<tr>
+		<th>Amount</th>
+		<th>Description</th>
+		<th>Status</th>
+	</tr>
+
+	{% if purchases|length == 0 %}
+		<tr><td>No transfer data available.</td></tr>
+	{% else %}
+		{% for purchase in purchases %}
+			<tr>
+				<td>${{ purchase.amount }}</td>
+				<td>${{ purchase.description }}</td>
+				<td class='status'>{{ purchase.status }}</td>
+			</tr>
+		{% endfor %}
+	{% endif %}
+  
+</table>
